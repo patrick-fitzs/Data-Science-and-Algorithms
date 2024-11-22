@@ -1,21 +1,32 @@
-# a = list
-# x = value to insert
-# n = len list
-# i = index to oinsert
+# # x = [8,3,9,7,1]
+# #
+# # n = len(x)
+# # for i in range(n):
+# #     print(f"index {i} contains number {x[i]}")
+# #
+# # for i,value in enumerate(x):
+# #     print(f"Using enumeration, the values at index {i} are {value}")
+#
+# # new_list = n *[0]
+# a = [10, 20, 40, 50, 60, 0, 0, 0]
+# n = 5
+# x = 3
+# i = 2
+#
+# # insert value x into the list a st position i
+# # n is just the length of the array
+# def myInserter(a,x,n,i):
+#     for j in range(n-1)
 
-def my_insert(a,x,n,i):
-    for j in range(n,i,-1):
-        a[j] = a[j - 1]
-        print("Value", a[j], "copied from index", j, "to", j + 1)
-    a[i] = x
-    print("Value", x, "inserted at index", i)
-    return a
 
-a = [10, 20, 40, 50, 60, 0, 0, 0]
-n = 5
-x = 30
-i = 2
-my_insert(a, x, n, i)
-print("Should move values 60, 50, 40 (in that order) into the next slot, and then put 30 at index 2")
-print(a, "should now be [10, 20, 30, 40, 50, 60, 0, 0]")
-print(len(a), "should still be 8")
+def FizzBuzz(x):
+    if x%3==0 and x%5==0:
+        return "Fizzbuzz"
+    if x%3==0:
+        return "Fizz"
+    if x%5==0:
+        return "Buzz"
+    else:
+        return "Welp"
+
+print(FizzBuzz(15))

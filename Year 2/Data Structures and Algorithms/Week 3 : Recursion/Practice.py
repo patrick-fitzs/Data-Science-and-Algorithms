@@ -1,15 +1,11 @@
-
-
-def sum(x):
-    if x ==[]:
+x = [1,2,3,4,5]
+def sum_list(x):
+    if x == []:
         return 0
     else:
-        head =x[0]
+        head = x[0]
         tail = x[1:]
-        tail_sum = sum(tail)
-        return head + tail_sum
 
-x = [1,2,3,4,5,19]
-y = list(range(1,101))
-print(sum(y))
-print(sum(x))
+    return head+sum_list(tail)
+
+print(sum_list(x))

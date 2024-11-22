@@ -5,7 +5,7 @@ def rec_prod(x):
         head = x[0]
         tail = x[1:]
 
-        return head * rec_prod(tail)
+    return head * rec_prod(tail)
 
 
 x = [1,2,3,4,5]

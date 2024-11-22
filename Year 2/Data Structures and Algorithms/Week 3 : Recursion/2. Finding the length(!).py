@@ -7,3 +7,12 @@ def rec_len(x):
 
 
 print(rec_len(x))
+
+# Lecturer solution below
+def rec_len(x):
+  if x == []:
+    return 0
+  tail = x[1:]
+  tail_len = rec_len(tail)
+  return tail_len + 1
+

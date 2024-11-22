@@ -9,4 +9,4 @@ def rec_pow(x,n):
         # n3 is 3*9 (3*3*3) 27 and so on
         return x*rec_pow(x,n-1)
 
-print(rec_pow(3,9))
+print(rec_pow(3,3))
