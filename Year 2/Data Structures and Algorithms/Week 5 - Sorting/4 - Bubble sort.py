@@ -18,6 +18,6 @@ def bsort(x):
     return x,
 
 
-numbers = [1,2,3,4,5,7,5,8]
+numbers = [1,2,3,4,7,5,8]
 
 print(bsort(numbers))
