@@ -1,3 +1,5 @@
+
+
 class Queue:
     def __init__(new_queue):
         new_queue._contents = []
@@ -24,47 +26,51 @@ class Queue:
     def __repr__(queue):
         return str(queue)
 
-
+## swap the first two elements in a queue
 def swap(q):
+    ## base case, if less than 2 return because will forever be the same
     if q.count() < 2:
-        return q  # If fewer than 2 elements, return as is
-
+        return q
+    # make a new queue
     new_queue = Queue()
+    # Store the first element which is dequeued from the queue
+    first = q.dequeue()
+    # second element dequeued from the queue
+    second = q.dequeue()
 
     # Swap the first two elements
-    first = q.dequeue()
-    second = q.dequeue()
     new_queue.enqueue(second)
     new_queue.enqueue(first)
 
-    # Enqueue the remaining elements
     while q.count() > 0:
         new_queue.enqueue(q.dequeue())
 
     return new_queue
 
 
+
+
+
 def same(q):
     if q.count() == 0:
-        return False  # Empty queue can't have same first and last
+        return False
 
     first = q.front()
     last = None
     temp_queue = Queue()
 
-    # Process all elements to find the last one
     while q.count() > 0:
         last = q.dequeue()
         temp_queue.enqueue(last)
 
-    # Restore the original queue
     while temp_queue.count() > 0:
         q.enqueue(temp_queue.dequeue())
 
     return first == last
 
 
-# Testing
+
+## Testing
 q = Queue()
 q.enqueue(5)
 q.enqueue(6)
