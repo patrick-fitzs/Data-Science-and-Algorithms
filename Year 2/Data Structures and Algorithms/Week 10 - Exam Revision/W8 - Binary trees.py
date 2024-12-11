@@ -113,13 +113,9 @@ def in_range_v2(t, low, high):
         # If the tree is empty, it is trivially in range.
         return True
 
-    if low is not None and t.value < low:
-        # If `low` is defined and the value is less than `low`, return False.
-        return False
-
-    if high is not None and t.value > high:
-        # If `high` is defined and the value is greater than `high`, return False.
-        return False
+        # if current value is outside range, considering for none limits
+    if (low is not None and t.value < low) or (high is not None and t.value > high):
+            return False
 
     # Recursively check the left and right subtrees.
     return in_range_v2(t.left_child, low, high) and in_range_v2(t.right_child, low, high)
@@ -180,7 +176,7 @@ print("Test 7: in_range(bt, 3, 10) -> Expected: False, Got:", in_range(bt, 3, 10
 
 print("\n### Testing in_range_v2 function ###")
 print("Test 8: in_range_v2(bt, None, 15) -> Expected: True, Got:", in_range_v2(bt, None, 15))
-print("Test 9: in_range_v2(bt, 5, None) -> Expected: True, Got:", in_range_v2(bt, 5, None))
+print("Test 9: in_range_v2(bt, 5, None) -> Expected: False, Got:", in_range_v2(bt, 5, None))
 print("Test 10: in_range_v2(bt, 6, None) -> Expected: False, Got:", in_range_v2(bt, 6, None))
 
 print("\n### Testing ctree function ###")
